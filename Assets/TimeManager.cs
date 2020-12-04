@@ -11,12 +11,13 @@ public class TimeManager : MonoBehaviour
     void Start()
     {
         DisplayTime(0);
+        timer = 60;
     }
 
     // Update is called once per frame
     void Update()
     {
-        DisplayTime(timer += Time.deltaTime);
+        DisplayTime(timer -= Time.deltaTime);
     }
 
     void DisplayTime(float timeToDisplay)
