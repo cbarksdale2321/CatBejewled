@@ -1,17 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 
-public class ScoreManager : MonoBehaviour
+public class BonusBar : MonoBehaviour
 {
-    [SerializeField]
-    private TextMeshProUGUI scoreText;
-    private static int score;
-
+    // Start is called before the first frame update
     void Start()
     {
-        scoreText.SetText($"Score = {score}");
+        
     }
 
     // Update is called once per frame
