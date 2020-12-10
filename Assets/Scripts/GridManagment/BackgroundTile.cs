@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BackgroundTile : MonoBehaviour
 {
-    public GameObject[] gamePeices;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -19,9 +19,6 @@ public class BackgroundTile : MonoBehaviour
 
     void Initialize()
     {
-        int peiceToUse = Random.Range(0, gamePeices.Length);
-        GameObject peice = Instantiate(gamePeices[peiceToUse], transform.position, Quaternion.identity);
-        peice.transform.parent = this.transform;
-        peice.name = this.gameObject.name;
+       
     }
 }

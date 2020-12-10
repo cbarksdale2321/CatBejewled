@@ -166,6 +166,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   width: 8
   height: 8
+  gamePeices:
+  - {fileID: 6440097519186615617, guid: 004209f6c45154949bbd7b591241a5f4, type: 3}
+  - {fileID: 5639579169391233632, guid: 11883643e832dd34aa47f8c851dde954, type: 3}
+  - {fileID: 6646086509514015987, guid: 95cd832d6cf884544a83da0f598f7f86, type: 3}
+  - {fileID: 6834637256203393287, guid: 68bd0fbdc3857d940b3d21d8f082ae54, type: 3}
+  - {fileID: 7768560545457212950, guid: 762e864f94faa60428ad3af636b18c45, type: 3}
   tilePrefab: {fileID: 1283323144341529556, guid: 9ba9dd3af9b005d4d9faa1a986ed73fd,
     type: 3}
 --- !u!1 &1355167068

@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class BoardManager : MonoBehaviour
 {
+
     public int width;
     public int height;
     private BackgroundTile[,] allTiles;
+    public GameObject[] gamePeices;
     public GameObject tilePrefab;
+    public GameObject[,] allShapes;
     // Start is called before the first frame update
     void Start()
     {
         allTiles = new BackgroundTile[width, height];
+        allShapes = new GameObject[width, height];
 
         Setup();
     }
@@ -32,6 +36,12 @@ public class BoardManager : MonoBehaviour
                 GameObject backgroundTile = Instantiate(tilePrefab, tempPostition, Quaternion.identity) as GameObject;
                 backgroundTile.transform.parent = this.transform;
                 backgroundTile.name = "( " + x + ", " + y + " )";
+                
+                int peiceToUse = Random.Range(0, gamePeices.Length);
+                GameObject peice = Instantiate(gamePeices[peiceToUse], tempPostition, Quaternion.identity);
+                peice.transform.parent = this.transform;
+                peice.name = "( " + x + ", " + y + " )";
+                allShapes[x, y] = peice;
             }
         }
     }
