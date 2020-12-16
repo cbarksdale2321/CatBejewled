@@ -9,6 +9,7 @@ public class GamePeice : MonoBehaviour
     public int previousColumn;
     public int previousRow;
     public bool isMatched = false;
+    private FindMatches findMatches;
     private GameObject otherPiece;
     private BoardManager board;
     private Vector2 firstTouchPosition;
@@ -24,19 +25,22 @@ public class GamePeice : MonoBehaviour
     void Start()
     {
         board = FindObjectOfType<BoardManager>();
+        findMatches = FindObjectOfType<FindMatches>();
+        /*
         targetX = (int)transform.position.x;
         targetY = (int)transform.position.y;
         row = targetY;
         column = targetX;
         previousRow = row;
         previousColumn = column;
+        */
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        FindMatches();
+       FindMatches();
         if (isMatched)
         {
             SpriteRenderer mySprite = GetComponent<SpriteRenderer>();
@@ -48,7 +52,13 @@ public class GamePeice : MonoBehaviour
         if (Mathf.Abs(targetX - transform.position.x) > .1)
         {
             tempPosition = new Vector2(targetX, transform.position.y);
-            transform.position = Vector2.Lerp(transform.position, tempPosition, .4f);
+            transform.position = Vector2.Lerp(transform.position, tempPosition, .6f);
+            if (board.allShapes[column,row] != this.gameObject)
+            {
+                board.allShapes[column, row] = this.gameObject;
+                //findMatches.FindAllMatches();
+            }
+            
         }
         else
         {
@@ -60,13 +70,20 @@ public class GamePeice : MonoBehaviour
         if (Mathf.Abs(targetY - transform.position.y) > .1)
         {
             tempPosition = new Vector2(transform.position.x, targetY);
-            transform.position = Vector2.Lerp(transform.position, tempPosition, .4f);
+            transform.position = Vector2.Lerp(transform.position, tempPosition, .6f);
+            if (board.allShapes[column, row] != this.gameObject)
+            {
+                
+                board.allShapes[column, row] = this.gameObject;
+                //findMatches.FindAllMatches();
+            }
+            
         }
         else
         {
             tempPosition = new Vector2(transform.position.x, targetY);
             transform.position = tempPosition;
-            board.allShapes[column, row] = this.gameObject;
+          
         }
 
 
@@ -84,11 +101,14 @@ public class GamePeice : MonoBehaviour
                 otherPiece.GetComponent<GamePeice>().column = column;
                 row = previousRow;
                 column = previousColumn;
+                yield return new WaitForSeconds(.5f);
+                board.currentState = GameState.Move;
 
             }
             else
             {
                 board.DestroyMatches();
+                
             }
             otherPiece = null;
         }
@@ -98,12 +118,20 @@ public class GamePeice : MonoBehaviour
 
     private void OnMouseDown()
     {
-        firstTouchPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        if (board.currentState == GameState.Move)
+        {
+            firstTouchPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        }
+       
     }
     private void OnMouseUp()
     {
-        finalTouchPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        CalcAngle();
+        if (board.currentState == GameState.Move)
+        {
+            finalTouchPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            CalcAngle();
+        }
+       
     }
 
     void CalcAngle()
@@ -113,6 +141,11 @@ public class GamePeice : MonoBehaviour
             swipeAngle = Mathf.Atan2(finalTouchPosition.y - firstTouchPosition.y, finalTouchPosition.x - firstTouchPosition.x) * (180 / Mathf.PI);
 
             MovePieces();
+            board.currentState = GameState.Wait;
+        }
+        else
+        {
+            board.currentState = GameState.Move;
         }
 
 
@@ -126,6 +159,8 @@ public class GamePeice : MonoBehaviour
         if (swipeAngle > -45 && swipeAngle <= 45 && column < (board.width - 1))//right swipe
         {
             otherPiece = board.allShapes[column + 1, row];
+            previousRow = row;
+            previousColumn = column;
             otherPiece.GetComponent<GamePeice>().column -= 1;
             column += 1;
         }
@@ -134,6 +169,8 @@ public class GamePeice : MonoBehaviour
 
 
             otherPiece = board.allShapes[column, row + 1];
+            previousRow = row;
+            previousColumn = column;
             otherPiece.GetComponent<GamePeice>().row -= 1;
             row += 1;
         }
@@ -142,12 +179,16 @@ public class GamePeice : MonoBehaviour
 
 
             otherPiece = board.allShapes[column - 1, row];
+            previousRow = row;
+            previousColumn = column;
             otherPiece.GetComponent<GamePeice>().column += 1;
             column -= 1;
         }
         else if (swipeAngle < -45 && swipeAngle >= -135 && row > 0)//down swipe
         {
             otherPiece = board.allShapes[column, row - 1];
+            previousRow = row;
+            previousColumn = column;
             otherPiece.GetComponent<GamePeice>().row += 1;
             row -= 1;
         }

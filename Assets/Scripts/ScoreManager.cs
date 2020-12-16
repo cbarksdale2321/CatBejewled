@@ -7,8 +7,8 @@ public class ScoreManager : MonoBehaviour
 {
     [SerializeField]
     private TextMeshProUGUI scoreText;
-    private static int score;
-    private static int bonusMultiplier;
+    public static int score;
+    public static int bonusMultiplier;
 
     void Start()
     {
