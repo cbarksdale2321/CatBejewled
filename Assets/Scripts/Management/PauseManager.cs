@@ -9,7 +9,8 @@ public class PauseManager : MonoBehaviour
     public GameObject GamePanel;
     public GameObject PausedPanel;
     public GameObject BoardPanel;
-    public GameObject MenuButtonBackgroud; 
+    public GameObject MenuButtonBackgroud;
+    private GameObject board;
     public bool isPaused = false;
 
     // Start is called before the first frame update
@@ -17,6 +18,7 @@ public class PauseManager : MonoBehaviour
     {
         Time.timeScale = 1;
         isPaused = false;
+        board = GameObject.FindGameObjectWithTag("Board");
     }
 
     public void QuitGame()
@@ -30,14 +32,17 @@ public class PauseManager : MonoBehaviour
         //Also stops the time from the timer. 
         if (isPaused)
         {
-            Time.timeScale = 1;
+            
+            Time.timeScale = 0;
+            board.SetActive(false);
             isPaused = false;
             BoardPanel.SetActive(true);
             MenuButtonBackgroud.SetActive(true);
         }
         else
         {
-            Time.timeScale = 0;
+            board.SetActive(true);
+            Time.timeScale = 1;
             isPaused = true;
             MenuButtonBackgroud.SetActive(false);
             BoardPanel.SetActive(false);

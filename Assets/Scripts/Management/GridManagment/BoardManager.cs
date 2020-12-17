@@ -6,7 +6,7 @@ using UnityEngine;
 /// State Machine
 /// </summary>
 /// 
-public enum GameState
+public  enum GameState
 {
     Wait,
     Move
@@ -112,6 +112,7 @@ public class BoardManager : MonoBehaviour
             Destroy(allShapes[column, row]);
             allShapes[column, row] = null;
             ScoreManager.IncrementScore(1);
+            EndGameManager.moves = EndGameManager.moves - 1;
         }
     }
 
@@ -168,6 +169,7 @@ public class BoardManager : MonoBehaviour
                     allShapes[x, y] = piece;
                     piece.GetComponent<GamePeice>().row = y;
                     piece.GetComponent<GamePeice>().column = x;
+                    piece.transform.SetParent(this.transform);
 
                 }
             }
