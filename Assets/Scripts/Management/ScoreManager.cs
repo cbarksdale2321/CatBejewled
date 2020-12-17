@@ -19,7 +19,7 @@ public class ScoreManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        scoreText.SetText($"Score = {score}");
+        scoreText.SetText($"{score}");
         CheckScore();
     }
 
