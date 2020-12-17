@@ -7,8 +7,8 @@ public class ScoreManager : MonoBehaviour
 {
     [SerializeField]
     private TextMeshProUGUI scoreText;
-    private static int score;
-    private static int bonusMultiplier;
+    public static int score;
+    public static int bonusMultiplier;
 
     void Start()
     {
@@ -20,6 +20,7 @@ public class ScoreManager : MonoBehaviour
     void Update()
     {
         scoreText.SetText($"Score = {score}");
+        CheckScore();
     }
 
     public static void IncrementScore(int scoreValue)
@@ -30,6 +31,13 @@ public class ScoreManager : MonoBehaviour
     public static void IncrementMultiplier()
     {
         bonusMultiplier++;
+    }
+    public static void CheckScore()
+    {
+        if (score >= 50)
+        {
+            Debug.Log("You Win!!!");
+        }
     }
 
 }

@@ -9,6 +9,7 @@ TagManager:
   - Polygon
   - Hexago
   - Triangle
+  - Board
   layers:
   - Default
   - TransparentFX
