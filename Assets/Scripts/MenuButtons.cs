@@ -35,7 +35,7 @@ public class MenuButtons : MonoBehaviour
     {
         //Plays the game...
         //Switch out the "SampleScene" with the game scene 
-        SceneManager.LoadScene("AYogoreScene", LoadSceneMode.Single);
+        SceneManager.LoadScene("djscene", LoadSceneMode.Single);
     }
     public void QuitGame()
     {

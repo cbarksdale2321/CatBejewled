@@ -8,6 +8,8 @@ public class PauseManager : MonoBehaviour
 {
     public GameObject GamePanel;
     public GameObject PausedPanel;
+    public GameObject BoardPanel;
+    public GameObject MenuButtonBackgroud; 
     public bool isPaused = false;
 
     // Start is called before the first frame update
@@ -30,12 +32,15 @@ public class PauseManager : MonoBehaviour
         {
             Time.timeScale = 1;
             isPaused = false;
-            PausedPanel.SetActive(false);
+            BoardPanel.SetActive(true);
+            MenuButtonBackgroud.SetActive(true);
         }
         else
         {
             Time.timeScale = 0;
             isPaused = true;
+            MenuButtonBackgroud.SetActive(false);
+            BoardPanel.SetActive(false);
             PausedPanel.SetActive(true);
         }
     }
@@ -47,19 +52,24 @@ public class PauseManager : MonoBehaviour
         {
             Time.timeScale = 1;
             isPaused = false;
+            BoardPanel.SetActive(true);
             PausedPanel.SetActive(false);
+            MenuButtonBackgroud.SetActive(true);
+
         }
         else
         {
             Time.timeScale = 0;
             isPaused = true;
+            MenuButtonBackgroud.SetActive(false);
+            BoardPanel.SetActive(false);
             PausedPanel.SetActive(true);
         }
     }
     public void ReloadScene()
     {
         //Reloads the game. 
-        SceneManager.LoadScene("AYogoreScene", LoadSceneMode.Single);
+        SceneManager.LoadScene("djscene", LoadSceneMode.Single);
         //Fixes Issue with Timer.
         //Reloads Timer and then counts down when the game is restarted
         if (isPaused)
