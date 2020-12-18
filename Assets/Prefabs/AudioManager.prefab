@@ -57,7 +57,31 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: UndoGamePieceMove
+    clip: {fileID: 8300000, guid: 0c9f5e57a35ca0544a0fb3348a9bd328, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: CatMeow3
     clip: {fileID: 8300000, guid: 274d78fc044004f429147c0bab8f1d3d, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: CatMeow4
+    clip: {fileID: 8300000, guid: 2948dcc3ffb92a7449095e82ad54f8c2, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: CatMeow5
+    clip: {fileID: 8300000, guid: 463a6c9d6c90e6740afcf5bb6de57a0a, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: CatWin
+    clip: {fileID: 8300000, guid: ae343f997bc63a848ac00670ba539d34, type: 3}
     volume: 0.5
     pitch: 1
     loop: 0

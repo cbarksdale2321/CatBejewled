@@ -35,6 +35,10 @@ public class TimeManager : MonoBehaviour
     {
         if (timer <= 1 )
         {
+            if (ScoreManager.score >=50 )
+            {
+                FindObjectOfType<AudioManager>().Play("CatWin");
+            }
             SceneManager.LoadScene(2);
         }
     }
