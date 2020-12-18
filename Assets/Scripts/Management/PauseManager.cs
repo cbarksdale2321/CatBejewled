@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class PauseManager : MonoBehaviour
 {
@@ -13,6 +14,11 @@ public class PauseManager : MonoBehaviour
     public GameObject Timed;
     private GameObject board;
     public bool isPaused = false;
+
+
+    public GameObject GameOverText;
+    public GameObject PauseText;
+
 
     // Start is called before the first frame update
     void Start()
@@ -112,5 +118,19 @@ public class PauseManager : MonoBehaviour
             else
                 PauseGame();
         }
+    }
+
+    public void GameOver()
+    {
+        board.SetActive(true);
+        Time.timeScale = 1;
+        isPaused = true;
+        Timed.SetActive(false);
+        MenuButtonBackgroud.SetActive(false);
+        BoardPanel.SetActive(false);
+        PausedPanel.SetActive(true);
+        GameOverText.SetActive(true);
+        PauseText.SetActive(false);
+
     }
 }

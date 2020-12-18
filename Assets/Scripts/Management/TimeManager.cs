@@ -39,7 +39,10 @@ public class TimeManager : MonoBehaviour
             {
                 FindObjectOfType<AudioManager>().Play("CatWin");
             }
-            SceneManager.LoadScene(2);
+            //SceneManager.LoadScene(2);
+            //Instead of opening scene, reopen pause menu with restart text instead
+            //
+            FindObjectOfType<PauseManager>().GameOver();
         }
     }
 
