@@ -761,13 +761,13 @@ MonoBehaviour:
     loop: 1
     source: {fileID: 0}
   - name: GamePieceMove
-    clip: {fileID: 8300000, guid: da2bb5627228c6041b63f95e40cd9d8b, type: 3}
+    clip: {fileID: 8300000, guid: ae26abb8338b1014f989aa4b452073d4, type: 3}
     volume: 0.5
-    pitch: 2.5
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: UndoGamePieceMove
-    clip: {fileID: 8300000, guid: ccb61b34dd680584982f37874fe402e7, type: 3}
+    clip: {fileID: 8300000, guid: 274d78fc044004f429147c0bab8f1d3d, type: 3}
     volume: 0.5
     pitch: 1
     loop: 0
