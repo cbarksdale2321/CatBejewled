@@ -390,7 +390,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -16, y: 190}
+  m_AnchoredPosition: {x: -16, y: 189}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &123098079
@@ -599,13 +599,13 @@ PrefabInstance:
     - target: {fileID: 798077381869404086, guid: 0793071c4bd07774c9c845d74bfc7323,
         type: 3}
       propertyPath: sounds.Array.data[7].name
-      value: Music
+      value: DeepMeow
       objectReference: {fileID: 0}
     - target: {fileID: 798077381869404086, guid: 0793071c4bd07774c9c845d74bfc7323,
         type: 3}
       propertyPath: sounds.Array.data[7].clip
       value: 
-      objectReference: {fileID: 8300000, guid: 408f397326d494043ab41f5323254729, type: 3}
+      objectReference: {fileID: 8300000, guid: ba3d1ac062e90ff42b9d8584c5fef701, type: 3}
     - target: {fileID: 798077381869404086, guid: 0793071c4bd07774c9c845d74bfc7323,
         type: 3}
       propertyPath: sounds.Array.data[7].volume
@@ -614,8 +614,13 @@ PrefabInstance:
     - target: {fileID: 798077381869404086, guid: 0793071c4bd07774c9c845d74bfc7323,
         type: 3}
       propertyPath: sounds.Array.data[7].pitch
-      value: 1
+      value: 0.4
       objectReference: {fileID: 0}
+    - target: {fileID: 798077381869404086, guid: 0793071c4bd07774c9c845d74bfc7323,
+        type: 3}
+      propertyPath: sounds.Array.data[0].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 408f397326d494043ab41f5323254729, type: 3}
     - target: {fileID: 798077381869404087, guid: 0793071c4bd07774c9c845d74bfc7323,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -708,7 +713,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 232, y: 176}
+  m_AnchoredPosition: {x: 611, y: 176}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &356525977
@@ -1087,29 +1092,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Megan Forouhi
-
-    Ean Losselyoung
-
-
-    Adrian Yogore
-
-    Danny Lopez
-
-
-    Charles
-    Barksdale
-
-    Darrel Jay Stagen
-
-
-    Aaron Baer
-
-
-    David Antognoli
-
-    Justin
-    Molhman '
+  m_text: "Megan Forouhi\nEan Losselyoung\n\nAdrian Yogore\nDanny Lopez\n\nCharles
+    Barksdale\nDarrel Jay Stagen\n\nAaron Baer\n\nDavid Antognoli\nJustin Molhman
+    \nKevin MacLeod"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1354,7 +1339,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -354, y: 170}
+  m_AnchoredPosition: {x: -580, y: 175}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &576843872
@@ -1898,7 +1883,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 431, y: 0}
+  m_AnchoredPosition: {x: 760, y: -94}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1107004913
@@ -2666,7 +2651,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 11.839998}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -550, y: 80}
+  m_AnchoredPosition: {x: -625, y: -69}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1957436805
