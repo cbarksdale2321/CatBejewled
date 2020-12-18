@@ -33,7 +33,7 @@ public class TimeManager : MonoBehaviour
     }
     public static void  CheckTimeZero()
     {
-        if (timer <= 0 )
+        if (timer <= 1 )
         {
             SceneManager.LoadScene(2);
         }

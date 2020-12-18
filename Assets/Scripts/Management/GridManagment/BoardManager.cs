@@ -202,9 +202,11 @@ public class BoardManager : MonoBehaviour
 
         while (MatchesOnBoard())
         {
+            ScoreManager.IncrementMultiplier();
             yield return new WaitForSeconds(.5f);
             DestroyMatches();
         }
+        ScoreManager.ResetMultiplier();
         yield return new WaitForSeconds(.5f);
         currentState = GameState.Move;
     }

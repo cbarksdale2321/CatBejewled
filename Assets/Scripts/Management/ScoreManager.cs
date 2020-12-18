@@ -40,4 +40,9 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
+    public static void ResetMultiplier()
+    {
+        bonusMultiplier = 1;
+    }
+
 }

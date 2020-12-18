@@ -72,7 +72,7 @@ public class PauseManager : MonoBehaviour
             isPaused = true;
             MenuButtonBackgroud.SetActive(false);
             BoardPanel.SetActive(false);
-            PausedPanel.SetActive(true);
+            //PausedPanel.SetActive(true);
             Timed.SetActive(false);
         }
     }
@@ -107,7 +107,10 @@ public class PauseManager : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-            PauseGame();
+            if (isPaused)
+                UnPauseGame();
+            else
+                PauseGame();
         }
     }
 }
