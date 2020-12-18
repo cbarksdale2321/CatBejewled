@@ -203,12 +203,38 @@ public class BoardManager : MonoBehaviour
         while (MatchesOnBoard())
         {
             ScoreManager.IncrementMultiplier();
+            PlayRandomMeow();
             yield return new WaitForSeconds(.5f);
             DestroyMatches();
         }
         ScoreManager.ResetMultiplier();
         yield return new WaitForSeconds(.5f);
         currentState = GameState.Move;
+    }
+
+    void PlayRandomMeow()
+    {
+        var random = Random.Range(0, 4);
+        switch (random)
+        {
+            case 0:
+                FindObjectOfType<AudioManager>().Play("GamePieceMove");
+                break;
+            case 1:
+                FindObjectOfType<AudioManager>().Play("UndoGamePieceMove");
+                break;
+            case 2:
+                FindObjectOfType<AudioManager>().Play("CatMeow3");
+                break;
+
+            case 3:
+                FindObjectOfType<AudioManager>().Play("CatMeow4");
+                break;
+            case 4:
+                FindObjectOfType<AudioManager>().Play("CatMeow5");
+                break;
+
+        }
     }
 }
 
