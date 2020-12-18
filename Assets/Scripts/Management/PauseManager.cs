@@ -10,6 +10,7 @@ public class PauseManager : MonoBehaviour
     public GameObject PausedPanel;
     public GameObject BoardPanel;
     public GameObject MenuButtonBackgroud;
+    public GameObject Timed;
     private GameObject board;
     public bool isPaused = false;
 
@@ -18,6 +19,7 @@ public class PauseManager : MonoBehaviour
     {
         Time.timeScale = 1;
         isPaused = false;
+        Timed.SetActive(true);
         board = GameObject.FindGameObjectWithTag("Board");
     }
 
@@ -38,12 +40,14 @@ public class PauseManager : MonoBehaviour
             isPaused = false;
             BoardPanel.SetActive(true);
             MenuButtonBackgroud.SetActive(true);
+            Timed.SetActive(true);
         }
         else
         {
             board.SetActive(true);
             Time.timeScale = 1;
             isPaused = true;
+            Timed.SetActive(false);
             MenuButtonBackgroud.SetActive(false);
             BoardPanel.SetActive(false);
             PausedPanel.SetActive(true);
@@ -60,7 +64,7 @@ public class PauseManager : MonoBehaviour
             BoardPanel.SetActive(true);
             PausedPanel.SetActive(false);
             MenuButtonBackgroud.SetActive(true);
-
+            Timed.SetActive(true);
         }
         else
         {
@@ -69,6 +73,7 @@ public class PauseManager : MonoBehaviour
             MenuButtonBackgroud.SetActive(false);
             BoardPanel.SetActive(false);
             PausedPanel.SetActive(true);
+            Timed.SetActive(false);
         }
     }
     public void ReloadScene()
@@ -82,11 +87,13 @@ public class PauseManager : MonoBehaviour
             Time.timeScale = 1;
             isPaused = false;
             PausedPanel.SetActive(false);
+            Timed.SetActive(true);
         }
         else
         {
             Time.timeScale = 0;
             isPaused = true;
+            Timed.SetActive(false);
             PausedPanel.SetActive(true);
         }
     }
