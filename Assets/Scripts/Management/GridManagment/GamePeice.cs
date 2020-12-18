@@ -201,7 +201,7 @@ public class GamePeice : MonoBehaviour
                 FindObjectOfType<AudioManager>().Play("GamePieceMove");
                 break;
             case 1:
-                FindObjectOfType<AudioManager>().Play("UndoGameMove");
+                FindObjectOfType<AudioManager>().Play("UndoGamePieceMove");
                 break;
             case 2:
                 FindObjectOfType<AudioManager>().Play("CatMeow3");
