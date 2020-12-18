@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class TimeManager : MonoBehaviour
@@ -19,7 +20,7 @@ public class TimeManager : MonoBehaviour
     void Update()
     {
         DisplayTime(timer -= Time.deltaTime);
-        //CheckTimeZero();
+        //checkTimeZero();
     }
 
      void DisplayTime(float timeToDisplay)
@@ -34,7 +35,8 @@ public class TimeManager : MonoBehaviour
     {
         if (timer <= 0 )
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(2);
         }
     }
+
 }

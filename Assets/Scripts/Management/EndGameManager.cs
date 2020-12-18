@@ -14,10 +14,6 @@ public enum GameType
 
 public class EndGameManager : MonoBehaviour
 {
-    //Panels
-    public GameObject GamePanel;
-    public GameObject PausePanel;
-    public GameObject GameOverPanel; 
 
     public TimeManager timeManager;
     [SerializeField] private Text movesLeft;
@@ -37,12 +33,7 @@ public class EndGameManager : MonoBehaviour
         
 
     }
-    public void CheckTimeZero()
-    {
-        GamePanel.SetActive(false);
-        PausePanel.SetActive(false);
-        GameOverPanel.SetActive(true);
-    }
+
     private void CheckMoves()
     {
         if (moves <= 0)
