@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public enum GameType
 {
@@ -10,10 +12,14 @@ public enum GameType
 }
 
 
-
 public class EndGameManager : MonoBehaviour
 {
-    //public TimeManager timeManager;
+    //Panels
+    public GameObject GamePanel;
+    public GameObject PausePanel;
+    public GameObject GameOverPanel; 
+
+    public TimeManager timeManager;
     [SerializeField] private Text movesLeft;
     public static int moves;
     // Start is called before the first frame update
@@ -27,8 +33,15 @@ public class EndGameManager : MonoBehaviour
     void Update()
     {
         TimeManager.CheckTimeZero();
+
         
 
+    }
+    public void CheckTimeZero()
+    {
+        GamePanel.SetActive(false);
+        PausePanel.SetActive(false);
+        GameOverPanel.SetActive(true);
     }
     private void CheckMoves()
     {
